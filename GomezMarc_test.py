@@ -76,31 +76,31 @@ def test_esta_disponible(biblioteca, llibre, res_esperat):
 
 
 # Test per a la funció usuari_te_prestecs
-# @pytest.mark.parametrize("biblioteca, usuari, res_esperat",
-#     [
-#         # Cas de prova 1: Usuària "Maria" amb préstecs pendents
-#         # (
-#         #     [
-#         #         {"prestecs": [
-#         #             {"usuari": "Joan", "retornat": True},
-#         #             {"usuari": "Maria", "retornat": False}
-#         #         ]}
-#         #     ],    
-#         #     "Maria",
-#         #     True
-#         # ),
-#         # Cas de prova 2: Usuari "Pere" sense préstecs pendents
-#         # (
-#         #     [
-#         #         {"prestecs": [
-#         #             {"usuari": "Pere", "retornat": True}
-#         #         ]}
-#         #     ],
-#         #     "Pere",
-#         #     False
-#         # )
-#     ]
-# )
+@pytest.mark.parametrize("biblioteca, usuari, res_esperat",
+    [
+        # Cas de prova 1: Usuària "Maria" amb préstecs pendents
+        (
+            [
+                {"prestecs": [
+                    {"usuari": "Joan", "retornat": True},
+                    {"usuari": "Maria", "retornat": False}
+                ]}
+            ],    
+            "Maria",
+            True
+        ),
+        # Cas de prova 2: Usuari "Pere" sense préstecs pendents
+        # (
+        #     [
+        #         {"prestecs": [
+        #             {"usuari": "Pere", "retornat": True}
+        #         ]}
+        #     ],
+        #     "Pere",
+        #     False
+        # )
+    ]
+)
 def test_usuari_te_prestecs(biblioteca, usuari, res_esperat):
     """
     Prova la funció usuari_te_prestecs per comprovar si un usuari té préstecs pendents.
@@ -114,30 +114,30 @@ def test_usuari_te_prestecs(biblioteca, usuari, res_esperat):
 
 # Test per a la funció dies_prestec_total
 @pytest.mark.parametrize("biblioteca, llibre, res_esperat",
-    [
+    # [
         # Cas de prova 1: Total de dies de préstec del llibre "El Quixot"
-        (
-            [
-                {"llibre": "El Quixot", "prestecs": [
-                    {"dies": 15},
-                    {"dies": 20}
-                ]}
-            ],
-            "El Quixot",
-            35
-        ),
-        # Cas de prova 2: Total de dies de préstec del llibre "1984"
-        (
-            [
-                {"llibre": "1984", "prestecs": [
-                    {"dies": 10},
-                    {"dies": 25}
-                ]}
-            ],
-            "1984",
-            35
-        )
-    ]
+    #     (
+    #         [
+    #             {"llibre": "El Quixot", "prestecs": [
+    #                 {"dies": 15},
+    #                 {"dies": 20}
+    #             ]}
+    #         ],
+    #         "El Quixot",
+    #         35
+    #     ),
+    #     # Cas de prova 2: Total de dies de préstec del llibre "1984"
+    #     (
+    #         [
+    #             {"llibre": "1984", "prestecs": [
+    #                 {"dies": 10},
+    #                 {"dies": 25}
+    #             ]}
+    #         ],
+    #         "1984",
+    #         35
+    #     )
+    # ]
 )
 def test_dies_prestec_total(biblioteca, llibre, res_esperat):
     """
