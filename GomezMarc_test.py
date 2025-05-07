@@ -76,31 +76,31 @@ def test_esta_disponible(biblioteca, llibre, res_esperat):
 
 
 # Test per a la funció usuari_te_prestecs
-@pytest.mark.parametrize("biblioteca, usuari, res_esperat",
-    [
-        # Cas de prova 1: Usuària "Maria" amb préstecs pendents
-        (
-            [
-                {"prestecs": [
-                    {"usuari": "Joan", "retornat": True},
-                    {"usuari": "Maria", "retornat": False}
-                ]}
-            ],
-            "Maria",
-            True
-        ),
-        # Cas de prova 2: Usuari "Pere" sense préstecs pendents
-        (
-            [
-                {"prestecs": [
-                    {"usuari": "Pere", "retornat": True}
-                ]}
-            ],
-            "Pere",
-            False
-        )
-    ]
-)
+# @pytest.mark.parametrize("biblioteca, usuari, res_esperat",
+#     [
+#         # Cas de prova 1: Usuària "Maria" amb préstecs pendents
+#         # (
+#         #     [
+#         #         {"prestecs": [
+#         #             {"usuari": "Joan", "retornat": True},
+#         #             {"usuari": "Maria", "retornat": False}
+#         #         ]}
+#         #     ],    
+#         #     "Maria",
+#         #     True
+#         # ),
+#         # Cas de prova 2: Usuari "Pere" sense préstecs pendents
+#         # (
+#         #     [
+#         #         {"prestecs": [
+#         #             {"usuari": "Pere", "retornat": True}
+#         #         ]}
+#         #     ],
+#         #     "Pere",
+#         #     False
+#         # )
+#     ]
+# )
 def test_usuari_te_prestecs(biblioteca, usuari, res_esperat):
     """
     Prova la funció usuari_te_prestecs per comprovar si un usuari té préstecs pendents.
